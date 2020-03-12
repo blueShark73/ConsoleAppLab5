@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<collection>
+    <studyGroup>
+        <coordinates>
+            <x>2</x>
+            <y>3</y>
+        </coordinates>
+        <creationDateXml>27-02-2020 16:15:14</creationDateXml>
+        <formOfEducation>FULL_TIME_EDUCATION</formOfEducation>
+        <groupAdmin>
+            <height>177</height>
+            <location>
+                <name>ITMO</name>
+                <x>12.0</x>
+                <y>12</y>
+            </location>
+            <name>Наруто</name>
+            <passportID>1234567qq</passportID>
+            <weight>66</weight>
+        </groupAdmin>
+        <id>1</id>
+        <name>Покемоны</name>
+        <semesterEnum>FIFTH</semesterEnum>
+        <studentsCount>30</studentsCount>
+    </studyGroup>
+    <studyGroup>
+        <coordinates>
+            <x>6</x>
+            <y>5</y>
+        </coordinates>
+        <creationDateXml>23-02-2020 13:13:13</creationDateXml>
+        <formOfEducation>FULL_TIME_EDUCATION</formOfEducation>
+        <groupAdmin>
+            <height>144</height>
+            <location>
+                <name>Дыбенко</name>
+                <x>123.0</x>
+                <y>321</y>
+            </location>
+            <name>Ржавый</name>
+            <passportID>гвоздь123</passportID>
+            <weight>133</weight>
+        </groupAdmin>
+        <id>-1</id>
+        <name>Пацаны четкие очень</name>
+        <semesterEnum>FIFTH</semesterEnum>
+        <studentsCount>13</studentsCount>
+    </studyGroup>
+</collection>
