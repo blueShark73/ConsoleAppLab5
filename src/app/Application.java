@@ -42,7 +42,8 @@ public class Application {
                         || !FieldsValidator.checkNumber((long) studyGroup.getGroupAdmin().getPassportID().length(), 7, 24, "У элемента некорректный пасспортный id админа, id: " + studyGroup.getId(), false)
                         || !FieldsValidator.checkNumber(studyGroup.getGroupAdmin().getWeight(), 0, 300, "У элемента некорректный вес админа, id: " + studyGroup.getId(), false)
                         || !FieldsValidator.checkNumber(studyGroup.getId(), 0, Long.MAX_VALUE, "У элемента некорректный id, имя элемента: " + studyGroup.getName(), false)
-                        || studyGroup.getFormOfEducation() == null)
+                        || studyGroup.getFormOfEducation() == null
+                        || !FieldsValidator.checkNumber(studyGroup.getCoordinates().getX(), Long.MIN_VALUE, Long.MAX_VALUE, "У элемента некорректная координата, id: " + studyGroup.getId(), false))
                     throw new InputFormatException();
                 if (!idList.add(studyGroup.getId()))
                     throw new SameIdException("В коллекции присутствуют элементы с одинаковыми id, будет загружен только один!!!");
@@ -160,6 +161,10 @@ public class Application {
     public void increaseScriptCounter() {
         if (scriptCounter >= STACK_SIZE) throw new StackIsLimitedException();
         scriptCounter++;
+    }
+
+    public int getScriptCounter() {
+        return scriptCounter;
     }
 
     /**

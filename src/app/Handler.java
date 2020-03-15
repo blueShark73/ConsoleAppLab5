@@ -66,6 +66,16 @@ public class Handler {
                 System.out.println(e.getMessage());
             }
         }
+        //спрашиваем о сохранении изменений при выходе через exit и сохраняем автоматически, если Ctrl+D
+        if (application.getScriptCounter() == 0) {
+            if (application.getCommandHistory().getLastCommand() instanceof ExitCommand) {
+                System.out.println("Сохранить изменения в файле(Yes/No)?");
+                if (scanner.nextLine().equals("Yes")) new SaveCommand().execute(application, null, null);
+            } else {
+                System.out.println("Коллекция сохранена в файле для дальнейшей работы");
+                new SaveCommand().execute(application, null, null);
+            }
+        }
     }
 
     /**

@@ -26,6 +26,10 @@ public class CommandHistory {
         history.addLast(command);
     }
 
+    public Command getLastCommand(){
+        return history.peekLast();
+    }
+
     /**
      * выводит историю
      */

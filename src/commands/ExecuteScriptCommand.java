@@ -16,7 +16,6 @@ import java.util.Scanner;
 public class ExecuteScriptCommand extends Command {
     private LinkedHashSet<StudyGroup> collection;
     private HashSet<Long> idList;
-    static final String path = new File("").getAbsolutePath();
 
     /**
      * во время исполнения обработчик приложения запускается со сканером файла, что позполяет читать данные из файла
@@ -29,7 +28,7 @@ public class ExecuteScriptCommand extends Command {
         try {
             collection = application.getCollection();
             idList = application.getIdList();
-            File file = new File(path + "/" + argument);
+            File file = new File(argument);
             Scanner fileScanner = new Scanner(file);
             application.increaseScriptCounter();
             application.getHandler().run(fileScanner);

@@ -1,8 +1,6 @@
 package commands;
 
-import app.Application;
-import app.Collection;
-import app.StudyGroup;
+import app.*;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -25,24 +23,10 @@ public class SaveCommand extends Command {
      */
     @Override
     public void execute(Application application, String argument, Scanner scanner) {
-        this.application =application;
-        try {
-            File fileOutput = new File(System.getenv("OUTPUT_PATH"));
-            if(!fileOutput.exists()) throw new FileNotFoundException();
-            Collection collectionClass = new Collection();
-            collectionClass.set(getCollection());
-            JAXBContext jaxbContext = JAXBContext.newInstance(Collection.class);
-            Marshaller marshaller = jaxbContext.createMarshaller();
-            FileOutputStream fileOutputStream = new FileOutputStream(fileOutput);
-            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            marshaller.marshal(collectionClass, fileOutputStream);
-        } catch (FileNotFoundException e){
-            System.out.println("Входной файл не существует или переменная окружения указана неправильно!!!");
-        } catch (JAXBException e){
-            System.out.println("Проблемы с содержанием входного файла!!!");
-        } catch (NullPointerException e){
-            System.out.println("Переменная окружения не найдена!!!");
-        }
+        this.application = application;
+        Collection collectionClass = new Collection();
+        collectionClass.set(getCollection());
+        FileWorker.saveCollection(collectionClass, "INPUT_PATH", "input.xml");
     }
 
     @Override

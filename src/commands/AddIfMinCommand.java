@@ -19,7 +19,7 @@ public class AddIfMinCommand extends AddCommand {
         collection = application.getCollection();
         idList = application.getIdList();
         StudyGroup studyGroup = executeInitialization(application, argument, scanner);
-        if (studyGroup.compareTo(application.getMinStudyGroup()) < 0) {
+        if (application.getMinStudyGroup()==null || studyGroup.compareTo(application.getMinStudyGroup()) < 0) {
             collection.add(studyGroup);
             idList.add(studyGroup.getId());
             System.out.println("Элемент добавлен");

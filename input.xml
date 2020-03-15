@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<collection>
+    <studyGroup>
+        <coordinates>
+            <x>2</x>
+            <y>3</y>
+        </coordinates>
+        <creationDateXml>27-02-2020 16:15:14</creationDateXml>
+        <formOfEducation>FULL_TIME_EDUCATION</formOfEducation>
+        <groupAdmin>
+            <height>177</height>
+            <location>
+                <name>ITMO</name>
+                <x>12.0</x>
+                <y>12</y>
+            </location>
+            <name>Наруто</name>
+            <passportID>1234567qq</passportID>
+            <weight>66</weight>
+        </groupAdmin>
+        <id>1</id>
+        <name>Покемоны</name>
+        <semesterEnum>FIFTH</semesterEnum>
+        <studentsCount>30</studentsCount>
+    </studyGroup>
+    <studyGroup>
+        <coordinates>
+            <x>1</x>
+            <y>1</y>
+        </coordinates>
+        <creationDateXml>15-03-2020 12:31:37</creationDateXml>
+        <formOfEducation>FULL_TIME_EDUCATION</formOfEducation>
+        <groupAdmin>
+            <height>12</height>
+            <location>
+                <name>12</name>
+                <x>12.0</x>
+                <y>1212</y>
+            </location>
+            <name>wer</name>
+            <passportID>1234567543</passportID>
+            <weight>23</weight>
+        </groupAdmin>
+        <id>5717812506841101241</id>
+        <name>123</name>
+        <semesterEnum>THIRD</semesterEnum>
+        <studentsCount>12</studentsCount>
+    </studyGroup>
+    <studyGroup>
+        <coordinates>
+            <x>1</x>
+            <y>1</y>
+        </coordinates>
+        <creationDateXml>15-03-2020 13:22:24</creationDateXml>
+        <formOfEducation>FULL_TIME_EDUCATION</formOfEducation>
+        <groupAdmin>
+            <height>1</height>
+            <location>
+                <name></name>
+                <x>1.0</x>
+                <y>1</y>
+            </location>
+            <name>12343</name>
+            <passportID>12345432</passportID>
+            <weight>1</weight>
+        </groupAdmin>
+        <id>8199086762487612385</id>
+        <name>qwe</name>
+        <semesterEnum>THIRD</semesterEnum>
+        <studentsCount>1</studentsCount>
+    </studyGroup>
+</collection>

@@ -290,6 +290,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
      */
     @Override
     public int compareTo(StudyGroup studyGroup) {
+        if(studyGroup==null) return 1;
         if (studentsCount == null) return -1;
         if (studyGroup.getStudentsCount() == null) return 1;
         return (int) (studentsCount * groupAdmin.getWeight() - studyGroup.getStudentsCount() * studyGroup.getGroupAdmin().getWeight());

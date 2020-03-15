@@ -33,20 +33,8 @@ public class Main {
         handler.addCommand(new ShowCommand().toString(), new ShowCommand());
         handler.addCommand(new SumOfStudentsCountCommand().toString(), new SumOfStudentsCountCommand());
         handler.addCommand(new UpdateCommand().toString(), new UpdateCommand());
-        try {
-            File fileInput = new File(System.getenv("INPUT_PATH"));
-            JAXBContext jaxbContext = JAXBContext.newInstance(Collection.class);
-            Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-            InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(fileInput));
-            Collection collection = (Collection) unmarshaller.unmarshal(inputStreamReader);
-            application = new Application(collection.get());
-        } catch (JAXBException e) {
-            System.out.println("Входной файл не корректен или вообще пуст!!!");
-        } catch (FileNotFoundException e) {
-            System.out.println("Входной файл не существует или для его чтения не хватает прав доступа!!!");
-        } catch (NullPointerException e) {
-            System.out.println("Переменная окружения не найдена!!!");
-        }
+        Collection collection = FileWorker.getCollection("INPUT_PATH", "input.xml");
+        if (collection != null) application = new Application(collection.get());
         application.setHandler(handler);
         handler.setApplication(application);
         System.out.println("Консольное приложение для управления коллекицей элементов");
@@ -58,8 +46,8 @@ public class Main {
                 handler.run(new Scanner(System.in));
                 break;
             } catch (NoSuchElementException e) {
-                System.out.println("Ошибка!!! Нельзя выходить из приложения или скрипта, не закончив ввод полей, изменения не сохранены, " +
-                        "вернуться в приложение(No - выйти)? Yes/No:");
+                System.out.println("Ошибка!!! Нельзя выходить из приложения или скрипта, не закончив ввод полей, измененённая коллекция не будет сохранена");
+                System.out.println("Вернуться в приложение(Yes - выйти, No - продолжить работу с приложением)? Yes/No:");
                 if (new Scanner(System.in).nextLine().equals("Yes")) {
                     System.out.println("Выход из приложения...");
                     break;
